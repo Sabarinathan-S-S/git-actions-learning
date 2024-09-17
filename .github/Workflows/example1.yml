@@ -10,7 +10,7 @@ jobs:
             run: echo "My first GA job"
 
             name: List files
-            run: ls
+            run: lrth -a 
 
             name: Read file
             run: cat README.md
