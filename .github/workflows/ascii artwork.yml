@@ -3,18 +3,35 @@ name: Generate ASCII
 on: push
 
 jobs:
-    ascii_job:
+    Build_job_1:
         runs-on: ubuntu-latest
         steps:
-        -  name: checkout repo
-           uses: actions/checkout@v4
+        -  name: Install Cowsay Program
+           run: sudo apt-get install cowsay -y
+ 
+        -  name: Execute Cowsay CMD
+           run: cowsay -f elephant "Vote for Vj, I AM TVK ELEPHANTTTT" >> elephant.txt
         
-        -  name: list repo files
-           run: ls -lrta
+        -  name: Sleep for 30 sec
+           run: sleep 30
+    
+    test_job:
+        runs-on: ubuntu-latest
+        steps:
+        -  name: Sleep for 10 sec
+           run: sleep 10
+
+        -  name: Finding file
+           run: grep -i "elephant" elephant.txt
+
+    Deploy_job:
+        runs-on: ubuntu-latest
+        steps:
+        -  name: Read file
+           run: cat elephant.txt
            
-        -  name: Execute shell
-           run: | 
-             chmod +x ./script.sh
-             ./script.sh
+        -  name: Deploy
+           run: echo deploying......
+            
 
        
