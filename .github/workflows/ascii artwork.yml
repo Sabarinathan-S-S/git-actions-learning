@@ -8,19 +8,11 @@ jobs:
         steps:
         -  name: checkout repo
            uses: actions/checkout@v4
-
-        -  name: Install Cowsay Program
-           run: sudo apt-get install cowsay -y
-
-        -  name: Execute Cowsay CMD
-           run: cowsay -f elephant "Vote for Vj, I AM TVK ELEPHANTTTT" >> elephant.txt
-
-        -  name: Finding file
-           run: grep -i "elephant" elephant.txt
-
-        -  name: Read file
-           run: cat elephant.txt
-
+        
         -  name: list repo files
            run: ls -lrta
            
+        -  name: Execute shell
+           run: ./script.sh
+
+       
