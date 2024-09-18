@@ -9,11 +9,19 @@ jobs:
         -  name: checkout repo
            uses: actions/checkout@v4
 
-        -  name: Welcome!
-           run: echo "My first GA job"
+        -  name: Command Execution
+           run: | #Multi-line command execution
+            echo "My first GA job"
+            ls -lrta
+            cat README.md
 
-        -  name: List files
-           run: ls
+        -  name: Generate ASCII artwork
+           run: cowsay -f elephant "Vote for Vj, I AM TVK ELEPHANTTTT" >> elephant.txt
 
-        -  name: Read file
-           run: cat README.md
+         
+
+       #-  name: List files
+       #   run: ls
+
+       #-  name: Read file
+       #  run: cat README.md
