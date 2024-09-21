@@ -3,7 +3,7 @@ name:  Workflow Filters and Activities
 on:  
   workflow_dispatch:
 #   schedule:
-#     - cron: "*/59 * * * *"
+#     - cron: "*/58 * * * *"
   push:
     branches:
         - main
